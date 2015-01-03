@@ -41,6 +41,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
     }
     return self;
 }
@@ -59,6 +61,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
     UIView *header = self.headerView;
     [self.tableView setTableHeaderView:header];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 - (UIView *)headerView
