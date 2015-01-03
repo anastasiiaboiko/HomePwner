@@ -11,6 +11,8 @@
 
 @interface BNRDetailViewController ()
 
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -22,6 +24,17 @@
 
 @implementation BNRDetailViewController
 - (IBAction)takePicture:(id)sender {
+    UIImagePickerController *imagePicker =
+    [[UIImagePickerController alloc] init];
+    
+    // If the device has a camera, take a picture, otherwise, just pick from photo library
+    if ([UIImagePickerController
+         isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    imagePicker.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
