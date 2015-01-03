@@ -8,8 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="eN6-Nv-YXw" id="h5x-cZ-MYL"/>
+                <outlet property="imageView" destination="7hn-Xh-7ze" id="c18-7q-8ud"/>
                 <outlet property="nameField" destination="63m-ZV-Asn" id="0Nn-VX-st6"/>
                 <outlet property="serialNumberField" destination="7hs-jo-3hx" id="ld1-zH-pv5"/>
+                <outlet property="toolbar" destination="SVB-e5-Lik" id="1zw-5W-cW9"/>
                 <outlet property="valueField" destination="Cdj-4S-ABm" id="7mq-ms-jxz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,29 +21,36 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mz4-gK-01t">
+                    <rect key="frame" x="38" y="39" width="46" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hve-pj-F4f">
-                    <rect key="frame" x="37" y="163" width="43" height="21"/>
+                    <rect key="frame" x="38" y="77" width="43" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hGL-b6-t9Q">
-                    <rect key="frame" x="37" y="201" width="42" height="21"/>
+                    <rect key="frame" x="38" y="120" width="42" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eN6-Nv-YXw">
-                    <rect key="frame" x="139" y="240" width="42" height="21"/>
+                    <rect key="frame" x="139" y="154" width="135" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="63m-ZV-Asn">
-                    <rect key="frame" x="101" y="121" width="211" height="30"/>
+                    <rect key="frame" x="101" y="35" width="211" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -50,7 +59,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="7hs-jo-3hx">
-                    <rect key="frame" x="101" y="159" width="211" height="30"/>
+                    <rect key="frame" x="101" y="73" width="211" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -59,7 +68,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Cdj-4S-ABm">
-                    <rect key="frame" x="101" y="197" width="211" height="30"/>
+                    <rect key="frame" x="101" y="116" width="211" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -67,13 +76,21 @@
                         <outlet property="delegate" destination="-1" id="ZSX-80-Y8h"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mz4-gK-01t">
-                    <rect key="frame" x="37" y="125" width="46" height="21"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7hn-Xh-7ze">
+                    <rect key="frame" x="8" y="195" width="304" height="314"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="SVB-e5-Lik">
+                    <rect key="frame" x="0.0" y="516" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="VVs-Ps-tkz">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="1QU-LD-TxE"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="-33" y="190"/>
