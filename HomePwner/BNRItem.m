@@ -60,6 +60,11 @@
         self.serialNumber = sNumber;
         self.valueInDollars = value;
         self.dateCreated = [[NSDate alloc] init];
+        
+        // Create an NSUUID object - and get its string representation
+        NSUUID *uuid = [[NSUUID alloc] init];
+        NSString *key = [uuid UUIDString];
+        _itemKey = key;
     }
     
     // Return the address of the newly initialized object
