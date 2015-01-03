@@ -81,20 +81,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self.tableView reloadData];
 }
 
-- (UIView *)headerView
-{
-    // If you haven't loaded the headerView yet...
-    if (!_headerView) {
-
-        // Load HeaderView.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
-
-    return _headerView;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[[BNRItemStore sharedStore] allItems] count];
@@ -153,24 +139,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     // Insert this new row into the table.
     [self.tableView insertRowsAtIndexPaths:@[indexPath]
                           withRowAnimation:UITableViewRowAnimationTop];
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    // If you are currently in editing mode...
-    if (self.isEditing) {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    } else {
-        // Change tet of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-    }
 }
 
 @end
