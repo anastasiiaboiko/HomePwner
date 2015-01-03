@@ -61,6 +61,13 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self.tableView setTableHeaderView:header];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (UIView *)headerView
 {
     // If you haven't loaded the headerView yet...
