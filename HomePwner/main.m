@@ -2,15 +2,17 @@
 //  main.m
 //  HomePwner
 //
-//  Created by Anastasia Boiko on 1/3/15.
-//  Copyright (c) 2015 Big Nerd Ranch. All rights reserved.
+//  Created by John Gallagher on 1/7/14.
+//  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
 
-int main(int argc, char * argv[]) {
+#import "BNRAppDelegate.h"
+
+int main(int argc, char * argv[])
+{
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([BNRAppDelegate class]));
     }
 }
