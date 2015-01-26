@@ -12,7 +12,7 @@
 
 @interface BNRDetailViewController ()
 
-<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
@@ -40,6 +40,11 @@
     // Place image picker on the screen
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
+
+- (IBAction)backgroundTapped:(id)sender {
+    [self.view endEditing:YES];
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker
  didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -80,13 +85,18 @@
     // Use filtered NSDate object to set dateLabel contents
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
     
-    NSString *imageKey = self.item.imageKey;
+    NSString *itemKey = self.item.itemKey;
     
-    // Get the image for its image key from the image store
-    UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
-    
-    // Use that image to put on the screen in the imageView
-    self.imageView.image = imageToDisplay;
+    if (itemKey) {
+        // Get image for image key from the image store
+        UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:itemKey];
+        
+        // Use that image to put on the screen in imageView
+        self.imageView.image = imageToDisplay;
+    } else {
+        // Clear the imageView
+        self.imageView.image = nil;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -109,4 +119,9 @@
     self.navigationItem.title = _item.itemName;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end
